@@ -5,6 +5,7 @@
     <title>KT SNT</title>
 </head>
 <body>
+  <input type="text" id="inputN" oninput="kiemtra()"/><span id="result"></span>
  <script>
    function isPrime(Number){
        for (let i = 2; i <=Math.sqrt(Number) ; i++) {
@@ -23,15 +24,24 @@
    //    }
    // }
 
-  let x = 0
-   let cnt=10000
-   while (x<10000){
-       if(isPrime(x)){
-           document.write(x)
-       }
-       x++;
-   }
+  // let x = 0
+  //  let cnt=10000
+  //  while (x<10000){
+  //      if(isPrime(x)){
+  //          document.write(x)
+  //      }
+  //      x++;
+  //  }
 
+   function kiemtra(){
+       let num = +(document.getElementById("inputN").value);
+       let result = true
+       if(result===isPrime(num)){
+           document.getElementById("result").innerHTML= num + " - la SNT"
+       }else {
+           document.getElementById("result").innerHTML= num + " - ko la SNT"
+       }
+   }
  </script>
 </body>
 </html>
